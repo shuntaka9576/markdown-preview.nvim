@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const fs_1 = tslib_1.__importDefault(require("fs"));
 const log4js_1 = tslib_1.__importDefault(require("log4js"));
-const os_1 = tslib_1.__importDefault(require("os"));
-const path_1 = tslib_1.__importDefault(require("path"));
 const MAX_LOG_SIZE = 1024 * 1024;
 const MAX_LOG_BACKUPS = 10;
-const LOG_FILE_PATH = process.env.NVIM_MKDP_LOG_FILE || path_1.default.join(os_1.default.tmpdir(), 'mkdp-nvim.log');
-const level = process.env.NVIM_MKDP_LOG_LEVEL || 'info';
+const LOG_FILE_PATH = `/tmp/mkdp-nvim.log`;
+// " process.env.NVIM_MKDP_LOG_FILE || path.join(os.tmpdir(), '')
+// const level = process.env.NVIM_MKDP_LOG_LEVEL || 'info'
+const level = 'debug';
 if (level === 'debug') {
     fs_1.default.writeFileSync(LOG_FILE_PATH, '', 'utf8');
 }

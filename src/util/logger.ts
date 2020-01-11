@@ -5,10 +5,11 @@ import path from 'path'
 
 const MAX_LOG_SIZE = 1024 * 1024
 const MAX_LOG_BACKUPS = 10
-const LOG_FILE_PATH =
-  process.env.NVIM_MKDP_LOG_FILE || path.join(os.tmpdir(), 'mkdp-nvim.log')
+const LOG_FILE_PATH =`/tmp/mkdp-nvim.log`
+  // " process.env.NVIM_MKDP_LOG_FILE || path.join(os.tmpdir(), '')
 
-const level = process.env.NVIM_MKDP_LOG_LEVEL || 'info'
+// const level = process.env.NVIM_MKDP_LOG_LEVEL || 'info'
+const level = 'debug'
 
 if (level === 'debug') {
   fs.writeFileSync(LOG_FILE_PATH, '', 'utf8')

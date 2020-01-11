@@ -34,6 +34,7 @@ exports.run = function () {
     const bufnr = handshake.query.bufnr
 
     logger.info('client connect: ', client.id, bufnr)
+    logger.debug('test:')
 
     clients[bufnr] = clients[bufnr] || []
     clients[bufnr].push(client)

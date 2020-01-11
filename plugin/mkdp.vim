@@ -101,7 +101,7 @@ endfunction
 
 function! s:MkdpAU() abort
     command! -buffer MarkdownPreview call mkdp#util#open_preview_page()
-    call s:init_command()
+    " call s:init_command()
 endfunction
 
 function! s:init() abort
