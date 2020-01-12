@@ -1,3 +1,5 @@
+const logger = require('./lib/util/logger')('app/nvim')
+
 // change cwd to ./app
 if (!/^(\/|C:\\)snapshot/.test(__dirname)) {
   process.chdir(__dirname)

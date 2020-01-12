@@ -4,7 +4,7 @@ let s:package_file = s:mkdp_root_dir . '/package.json'
 
 " echo message
 function! mkdp#util#echo_messages(hl, msgs)
-  if empty(a:msgs) | return | endif
+  if empty(a:msgs) | return | endif " メッセイージからのとき早期リターンの書き方
   execute 'echohl '.a:hl
   if type(a:msgs) ==# 1
     echomsg a:msgs

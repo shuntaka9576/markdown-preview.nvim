@@ -31,7 +31,10 @@ interface IPlugin {
 let app: IApp
 
 export default function(options: Attach): IPlugin {
+  // {socket: address} がはいる
+  // {"socket":"/var/folders/3t/h6dxn65d7c71rrkq32vkdv6h0000gn/T/nvim9xsfkf/0"}
   const nvim: NeovimClient = attach(options)
+  logger.debug(`options: ${JSON.stringify(options)}`)
 
   nvim.on('notification', async (method: string, args: any[]) => {
     const opts = args[0] || args

@@ -5,7 +5,9 @@ const neovim_1 = require("neovim");
 const logger = require('../util/logger')('attach'); // tslint:disable-line
 let app;
 function default_1(options) {
+    // {socket: address} がはいる
     const nvim = neovim_1.attach(options);
+    logger.debug(`options: ${JSON.stringify(options)}`);
     nvim.on('notification', (method, args) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         const opts = args[0] || args;
         const bufnr = opts.bufnr;

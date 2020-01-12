@@ -4,6 +4,7 @@ const address = process.env.MKDP_NVIM_LISTEN_ADDRESS || process.env.NVIM_LISTEN_
 
 const MSG_PREFIX = '[markdown-preview.vim]'
 
+logger.debug(`address: ${address}`)
 const plugin = attach({
   socket: address
 })
