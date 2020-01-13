@@ -84,5 +84,5 @@ use((req, res) => {
 })
 
 module.exports = function (req, res, next) {
-  return routes.reduce((next, route) => route(req, res, next), next)()
+  return routes.reduce((next, route) => {logger.debug(`next: ${next}`);logger.debug(`route: ${route}`);return route(req, res, next)}, next)()
 }
